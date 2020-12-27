@@ -6,7 +6,6 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect(("192.168.1.50", 5090))
 
 # vamos a crear una register() para el server y lo mandamos
-
 command = "register(asfa::pulsador::conex)\n"
 try:
     s.send(command.encode())
@@ -35,6 +34,8 @@ def command():
             elif r == b'asfa::pulsador::conex=0\r\n':
                 Deconex = shlex.split(Apagado)
                 subprocess.call(Deconex)
+        else:
+            break
 
 main = threading.Thread(target=command)
 main.start()
