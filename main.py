@@ -28,7 +28,7 @@ def command():
     while True:
         r = s.recv(128)
         #print(str(r))
-        if r == b'connected=true\r':
+        if r == b'connected=true\r\n':
             if r == b'asfa::pulsador::conex=1\r\n':
                 conex = shlex.split(Encendido)
                 subprocess.call(conex)
