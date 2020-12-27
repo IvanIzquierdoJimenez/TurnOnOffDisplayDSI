@@ -5,9 +5,9 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect(("192.168.1.50", 5090))
 
 # vamos a crear una register() para el server y lo mandamos
-command = "register(asfa::pulsador::conex)\n"
+commandReg = "register(asfa::pulsador::conex)\n"
 try:
-    s.send(command.encode())
+    s.send(commandReg.encode())
 except socket.error:
     print("No se ha conectado el socket...")
 
